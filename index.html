@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FOR U!!!</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      .focus-in-expand {
+        -webkit-animation: focus-in-expand 0.8s
+          cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        animation: focus-in-expand 4s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+          both;
+      }
+      @-webkit-keyframes focus-in-expand {
+        0% {
+          letter-spacing: -0.5em;
+          -webkit-filter: blur(12px);
+          filter: blur(12px);
+          opacity: 0;
+        }
+        100% {
+          -webkit-filter: blur(0px);
+          filter: blur(0px);
+          opacity: 1;
+        }
+      }
+      @keyframes focus-in-expand {
+        0% {
+          letter-spacing: -0.5em;
+          -webkit-filter: blur(12px);
+          filter: blur(12px);
+          opacity: 0;
+        }
+        100% {
+          -webkit-filter: blur(0px);
+          filter: blur(0px);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body
+    style="
+      background-image: url(https://images.unsplash.com/photo-1562505299-a92c9a1c4f37?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    "
+    class="flex justify-center h-screen items-center"
+  >
+    <div
+      class="bg-white border px-10 py-8 border-4 border-gray-300 shadow-lg shadow-blue-300 rounded-xl text-center animate__animated animate__backInDown m-8 w-120"
+      id="kartu"
+    >
+      <h1
+        class="font-bold text-3xl animate__animated animate__pulse animate__infinite"
+      >
+        Happy Birthday
+      </h1>
+      <h1
+        class="text-4xl text-[#578FCA] font-bold animate__animated animate__rubberBand animate__infinite"
+      >
+        ESAAA
+      </h1>
+      <button
+        class="font-bold bg-[#578FCA] text-white rounded mt-5 hover:bg-[#3674B5] transition ease-in w-full animate__animated animate__delay-1s animate__jello"
+        onclick="ubahKartu()"
+      >
+        Piw Piw
+      </button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script>
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+      });
+      let kartu = document.getElementById("kartu");
+      function ubahKartu() {
+        kartu.innerHTML = `<h1 class="font-semibold text-warp focus-in-expand">Selamat yaa udah 17 aja nii. Aneh rasanya ngetik kaya gini sekarang, kita udah jauh kalo dibandingin kita yang dulu. Tapi tetep aja, di hari yang spesial ini, ada aku yang masih ngucapin doa terbaik buat kamu. Walaupun dulu ada masa dimana <i>“Anugerah terindah yang pernah kumiliki,”</i> dan walaupun sekarang udah beda, aku bersyukur pernah ngerasain semua pengalaman pertama aku sama kamu. Dan yaa..seiring waktu, kayanya semuanya bakal geser, tapi perasaan aku tetep ada.. agak samar.. tapi masih <b>bergema sampai selamanya.</b> Semoga di usia kamu yang bertambah ini, kamu nemuin versi terbaik kamu dan tetep kasih senyum ceria kayak biasanya yang bakal aku tunggu. Love u more Esaa</h1>
+        <button
+        class="p-2 bg-slate-600 text-white rounded mt-5 hover:bg-slate-900 transition ease-in w-full animate__animated animate__delay-1s animate__jello"
+        onclick="refresh()"
+      >
+        Byeeee
+      </button>`;
+      }
+      function refresh() {
+        location.reload();
+      }
+    </script>
+    <div>
+    <audio controls autoplay class="audio hidden">
+      <source src="music.mp3" type="audio/mpeg" />
+    </div>
+    </audio>
+  </body>
+</html>
