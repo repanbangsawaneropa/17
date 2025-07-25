@@ -80,22 +80,40 @@
       });
       let kartu = document.getElementById("kartu");
       function ubahKartu() {
-        kartu.innerHTML = `<h1 class="font-semibold text-warp focus-in-expand">Selamat yaa udah 17 aja nii. Aneh rasanya ngetik kaya gini sekarang, kita udah jauh kalo dibandingin kita yang dulu. Tapi tetep aja, di hari yang spesial ini, ada aku yang masih ngucapin doa terbaik buat kamu. Walaupun dulu ada masa dimana <i>“Anugerah terindah yang pernah kumiliki,”</i> dan walaupun sekarang udah beda, aku bersyukur pernah ngerasain semua pengalaman pertama aku sama kamu. Dan yaa..seiring waktu, kayanya semuanya bakal geser, tapi perasaan aku tetep ada.. agak samar.. tapi masih <b>bergema sampai selamanya.</b> Semoga di usia kamu yang bertambah ini, kamu nemuin versi terbaik kamu dan tetep kasih senyum ceria kayak biasanya yang bakal aku tunggu. Love u more Esaa</h1>
+        kartu.innerHTML = `
+        <h1 class=\"font-semibold text-warp focus-in-expand\">Selamat yaa, udaa 17 aja nie sekarang. Aneh juga rasanya ngetik ini, nginget gimana kita dulu sama sekarang… well well well, udah banyak hal yang berubah, tapi entah kenapa masih ada aku di sini yang tetep pengen ngucapin doa-doa terbaik buat kamu. Dulu pernah ada masa di mana <i>“Anugerah terindah yang pernah kumiliki,”</i> jadi kenyataan, dan walaupun semuanya sekarang pelan-pelan berubah bentuk, aku tetep bersyukur pernah ngerasain semua ‘pertama’ bareng kamu. Seiring waktu, mungkin semuanya makin dewasa, makin tenang… tapi perasaan aku.., meski udah gak seintens dulu, masih ada, masih hangat, dan masih <b>bergema sampai selamanya.</b> <q>Ebusett Srepett.</q> Semoga di usia yang baru ini, kamu terus jadi versi terbaik dari diri kamu yaww, dan tetep kasih senyum ceria kayak biasanya—yang selalu aku tunggu. Love u more, Esaa.</h1>
         <button
-        class="p-2 bg-slate-600 text-white rounded mt-5 hover:bg-slate-900 transition ease-in w-full animate__animated animate__delay-1s animate__jello"
-        onclick="refresh()"
-      >
-        Byeeee
-      </button>`;
+          class=\"p-2 bg-slate-600 text-white rounded mt-5 hover:bg-slate-900 transition ease-in w-full animate__animated animate__delay-1s animate__jello\"
+          onclick=\"refresh()\"
+        >
+          Byeeee
+        </button>
+        <button
+          id="playMusicBtn"
+          class="font-bold bg-gradient-to-r from-[#578FCA] to-[#A7C7E7] text-white rounded mt-5 hover:from-[#3674B5] hover:to-[#6CA0D1] transition ease-in w-full animate__animated animate__delay-2s animate__pulse"
+          onclick="showAudioPlayer()"
+        >
+          Play Music
+        </button>
+        <div id="audioContainer" class="mt-5 hidden">
+          <audio id="audioPlayer" controls class="w-full rounded shadow-lg border-2 border-[#578FCA] bg-white">
+            <source src="music.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+        `;
       }
       function refresh() {
         location.reload();
       }
+      function showAudioPlayer() {
+        const audioContainer = document.getElementById('audioContainer');
+        audioContainer.classList.remove('hidden');
+        const audioPlayer = document.getElementById('audioPlayer');
+        audioPlayer.play();
+        document.getElementById('playMusicBtn').disabled = true;
+        document.getElementById('playMusicBtn').innerText = 'Enjoy the Music!';
+      }
     </script>
     <div>
-    <audio controls autoplay class="audio hidden">
-      <source src="music.mp3" type="audio/mpeg" />
-    </div>
-    </audio>
   </body>
 </html>
